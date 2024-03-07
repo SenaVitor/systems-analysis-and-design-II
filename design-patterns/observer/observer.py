@@ -22,15 +22,20 @@ class Stock:
 
     def subscrive(self, department: Department) -> None:
         self.departments.append(department)
+
     def unsubscrive(self, department: Department) -> None:
         self.departments.remove(department)
+
     def notify(self) -> None:
         for department in self.departments:
             department.update()
+
     def addProduct(self, product: Product) -> None:
         self.products.append(product)
+
     def removeProduct(self, product: Product) -> None:
         self.products.remove(product)
+        
     def buyProduct(self, product, amount):
         index = self.products.index(product)
         if(self.products[index].amount >= amount):
